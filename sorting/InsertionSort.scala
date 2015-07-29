@@ -7,7 +7,12 @@ object InsertionSort extends App {
     def insert(head: Int, tail: List[Int]) : List[Int] = {
       tail match {
         case Nil => List(head)
-        case nextHead :: nextTail => if (head <= nextHead) head :: tail else nextHead :: insert(head, nextTail)
+        case nextHead :: nextTail => {
+          if (head <= nextHead)
+            head :: tail
+          else
+            nextHead :: insert(head, nextTail)
+        }
       }
     }
 
